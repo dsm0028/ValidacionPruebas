@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace LibClases
 {
-	class Usuario
+	public class Usuario
 	{
 
 		private string contrasena;
 
-		Usuario(string _cuenta)
+		public Usuario(string _cuenta)
 		{
 			this.cuenta = _cuenta;
 			this.contrasena = "";
