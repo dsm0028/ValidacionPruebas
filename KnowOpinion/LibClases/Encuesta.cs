@@ -8,7 +8,12 @@ namespace LibClases
 {
     public class Encuesta
     {
-
+        private bool activa;
+        public bool Activa
+        {
+            get { return activa; }
+            set { this.activa = value; }
+        }
 
         private string titulo;
         public string Titulo

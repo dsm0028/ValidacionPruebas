@@ -27,6 +27,5 @@ namespace LibClases
             set { this.descripcion = value; }
         }
 
-        private Usuario usuario_que_la_relleno = null;
     }
 }
