@@ -12,6 +12,7 @@ namespace LibClases.test
 		{
 			Usuario u = new Usuario("NoMbRe");
             Assert.AreEqual(u.Cuenta, "NoMbRe");
+
             Usuario u1 = new Usuario(15,"cuenta1", "PasTWrd");
             Assert.AreEqual(u1.IdUsuario, 15);
             Assert.AreNotEqual(u1.IdUsuario, 5);

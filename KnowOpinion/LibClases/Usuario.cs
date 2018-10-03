@@ -93,6 +93,7 @@ namespace LibClases
             set { this.grabado = value; }
         }
 
+
         public bool comprobarcontrasena(string c)
         {
             return c == this.contrasena;
