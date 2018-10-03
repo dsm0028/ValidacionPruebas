@@ -81,6 +81,34 @@ namespace LibClases
             set { this.grabado = value; }
         }
 
+        public bool comprobarcontrasena(string c)
+        {
+            return c == this.contrasena;
+        }
 
+        public void asignacontrasena(string c)
+        {
+            this.contrasena = c;
+        }
+
+        public bool cambiarcontrasenaantigua(string c)
+        {
+            if (c == this.contrasena && Grabado)
+            {
+                asignacontrasena(c);
+                return true;
+            }
+            return false;
+        }
+
+        public bool cambiarcontrasenanoguardada(string c)
+        {
+            if (!Grabado)
+            {
+                asignacontrasena(c);
+                return true;
+            }
+            return false;
+        }
     }
 }
