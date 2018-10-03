@@ -8,29 +8,23 @@ namespace LibClases
 {
     public class Encuesta
     {
-        private string num_encuesta;
-        public string Num_encuesta
+
+
+        private string titulo;
+        public string Titulo
         {
-            get { return num_encuesta; }
-            set { this.num_encuesta = value; }
+            get { return this.titulo; }
+            set { this.titulo = value; }
         }
 
-        private int valoracion;
-        public int Valoracion
-        {
-            get { return valoracion; }
-            set { if (value >= 1 && value <= 4) 
-                {
-                    this.valoracion = value;
-                }
-            }
-        }
         private string descripcion;
         public string Descripcion
         {
-            get { return descripcion; }
+            get { return this.descripcion; }
             set { this.descripcion = value; }
         }
+
+        private List<Respuesta> lista_respuestas = new List<Respuesta>();
 
 
     }

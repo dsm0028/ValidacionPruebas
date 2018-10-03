@@ -36,12 +36,21 @@ namespace LibClases.test
         }
 
         [TestMethod]
-        public void TestAsignarContraseña()
+        public void TestAsignarContrasena()
         {
             Usuario u = new Usuario(1, "Cuenta36", "ContAsig");
             u.asignacontrasena("tiburcio");
             Assert.IsTrue(u.comprobarcontrasena("tiburcio"));
             Assert.IsFalse(u.comprobarcontrasena("ContAsig"));
+        }
+
+        [TestMethod]
+        public void TestGrabarContrasena()
+        {
+            Usuario u = new Usuario(1, "Cuenta36", "ContAsig");
+            Assert.IsFalse(u.Grabado);
+            u.grabarcontrasena();
+            Assert.IsTrue(u.Grabado);
         }
     }
 }

@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+
 
 namespace LibClases
 {
 	public class Usuario
 	{
 
-		private string contrasena;
+    private string Encriptar(string password)
+    {
+        byte[] bytes = System.Text.Encoding.UTF8.GetBytes(password);
+        SHA256 mySHA256 = SHA256.Create();
+        bytes = mySHA256.ComputeHash(bytes);
+        return (System.Text.Encoding.ASCII.GetString(bytes));
+    }
+
+
+    private string contrasena;
         public string Contrasena
         {
             get { return contrasena; }
@@ -19,7 +30,7 @@ namespace LibClases
         public Usuario(string _cuenta)
 		{
 			this.cuenta = _cuenta;
-			this.contrasena = "";
+			this.contrasena = Encriptar("");
 
 		}
     
@@ -27,7 +38,7 @@ namespace LibClases
         {
             this.idUsuario = _idUsuario;
             this.cuenta = _cuenta;
-            this.contrasena = _contrasena;
+            this.contrasena = Encriptar(_contrasena);
         }
 
         private int idUsuario;
@@ -96,17 +107,19 @@ namespace LibClases
 
         public bool comprobarcontrasena(string c)
         {
-            return c == this.contrasena;
+            string _c = Encriptar(c);
+            return _c.Equals(this.contrasena);
         }
 
         public void asignacontrasena(string c)
         {
-            this.contrasena = c;
+            string _c = Encriptar(c);
+            this.contrasena = _c;
         }
 
         public bool cambiarcontrasenaantigua(string c, string nueva)
         {
-            if (c == this.contrasena && Grabado)
+            if (comprobarcontrasena(c) && Grabado)
             {
                 asignacontrasena(nueva);
                 return true;
