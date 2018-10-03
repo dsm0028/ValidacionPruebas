@@ -91,11 +91,11 @@ namespace LibClases
             this.contrasena = c;
         }
 
-        public bool cambiarcontrasenaantigua(string c)
+        public bool cambiarcontrasenaantigua(string c, string nueva)
         {
             if (c == this.contrasena && Grabado)
             {
-                asignacontrasena(c);
+                asignacontrasena(nueva);
                 return true;
             }
             return false;
