@@ -10,19 +10,31 @@ namespace LibClases
 	{
 
 		private string contrasena;
+        public string Constrasena
+        {
+            get { return contrasena; }
+            set { this.contrasena = value; }
+        }
 
-		public Usuario(string _cuenta)
+        public Usuario(string _cuenta)
 		{
 			this.cuenta = _cuenta;
 			this.contrasena = "";
 
 		}
-
-        public Usuario(string _cuenta, string _contrasena)
+    
+        public Usuario(int _idUsuario ,string _cuenta, string _contrasena)
         {
+            this.idUsuario = _idUsuario;
             this.cuenta = _cuenta;
             this.contrasena = _contrasena;
+        }
 
+        private int idUsuario;
+        public int IdUsuario
+        {
+            get { return idUsuario; }
+            set { this.idUsuario = value; }
         }
 
         private string cuenta;
@@ -109,6 +121,11 @@ namespace LibClases
                 return true;
             }
             return false;
+        }
+
+        public void grabarcontrasena()
+        {
+            Grabado = true;
         }
     }
 }
