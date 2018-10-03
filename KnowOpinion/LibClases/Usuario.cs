@@ -10,7 +10,7 @@ namespace LibClases
 	{
 
 		private string contrasena;
-        public string Constrasena
+        public string Contrasena
         {
             get { return contrasena; }
             set { this.contrasena = value; }
