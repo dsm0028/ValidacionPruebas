@@ -8,6 +8,22 @@ namespace LibClases
 {
     public class Encuesta
     {
+
+        public Encuesta(int id, string tit, string des)
+        {
+            this.id = id;
+            this.activa = true;
+            this.titulo = tit;
+            this.descripcion = des;
+        }
+
+        private int id;
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
         private bool activa;
         public bool Activa
         {
@@ -36,10 +52,10 @@ namespace LibClases
             return lista_respuestas;
         }
 
-        public void AnadirRespuesta(Respuesta e)
+        public void AnadirRespuesta(int val, string com)
         {
 
-            lista_respuestas.Add(e);
+            lista_respuestas.Add(new Respuesta(val,com));
 
         }
 

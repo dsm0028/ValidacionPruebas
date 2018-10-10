@@ -10,6 +10,8 @@ namespace LibClases
     {
         private Usuario admin;
         private List<Encuesta> Lista_Encuestas = new List<Encuesta>();
+        private static int ENCUESTA_COUNT = 0;
+
         private bool estaAuthed;
         public bool Autenticado
         {
@@ -35,6 +37,22 @@ namespace LibClases
                 }
             }
             return activas;
+        }
+
+        public List<Encuesta> ObtenerTodas()
+        {
+            return Lista_Encuestas;
+        }
+
+        public void AddEncuesta(string titulo, string des)
+        {
+            Lista_Encuestas.Add(new Encuesta(ENCUESTA_COUNT, titulo, des));
+            ENCUESTA_COUNT += 1;
+        }
+
+        public Encuesta GetEncuestaById(int id)
+        {
+            return Lista_Encuestas[id];
         }
 
         public bool Login(string user, string p)

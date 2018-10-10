@@ -11,12 +11,6 @@ namespace LibClases.test
     [TestClass]
     public class TestEncuesta
     {
-        public TestEncuesta()
-        {
-            //
-            // TODO: Agregar aquí la lógica del constructor
-            //
-        }
 
         private TestContext testContextInstance;
 
@@ -58,12 +52,59 @@ namespace LibClases.test
         //
         #endregion
 
-        [TestMethod]
-        public void TestMethod1()
+
+        private void meteRespuestas(Encuesta foo)
         {
-            //
-            // TODO: Agregar aquí la lógica de las pruebas
-            //
+            foo.AnadirRespuesta(1, "malisima");
+            foo.AnadirRespuesta(2, "regulera");
+            foo.AnadirRespuesta(2, "regulera");
+            foo.AnadirRespuesta(2, "");
+            foo.AnadirRespuesta(3, "");
+            foo.AnadirRespuesta(3, "pasable");
+            foo.AnadirRespuesta(4, "esta buena");
+            foo.AnadirRespuesta(1, "malisima");
+            foo.AnadirRespuesta(2, "regulera");
+            foo.AnadirRespuesta(2, "regulera");
+            foo.AnadirRespuesta(2, "");
+            foo.AnadirRespuesta(3, "");
+            foo.AnadirRespuesta(3, "pasable");
+            foo.AnadirRespuesta(4, "esta buena");
+            foo.AnadirRespuesta(1, "malisima");
+            foo.AnadirRespuesta(2, "regulera");
+            foo.AnadirRespuesta(2, "regulera");
+            foo.AnadirRespuesta(2, "");
+            foo.AnadirRespuesta(3, "");
+            foo.AnadirRespuesta(3, "pasable");
+            foo.AnadirRespuesta(4, "esta buena");
         }
+
+        [TestMethod]
+        public void ProbarGenEncuestas()
+        {
+            Encuesta foo = new Encuesta("Encuesta Limpieza Lavabos", "estan sucios o no?");
+            Assert.AreEqual(foo.Titulo, "Encuesta Limpieza Lavabos");
+            Assert.IsTrue(foo.Activa);
+            Assert.IsTrue(foo.ObtenerRespuestas().Count == 0);
+            Assert.AreEqual(foo.Descripcion, "estan sucios o no?");
+        }
+
+        [TestMethod]
+        public void ProbarAdicionRespuestas()
+        {
+            Encuesta foo = new Encuesta("Mercadona", "Valore nuestra pescadilla");
+            meteRespuestas(foo);
+            Assert.IsTrue(foo.ObtenerRespuestas().Count > 0);
+            Assert.IsTrue(foo.ObtenerRespuestas().Count == 21);
+        }
+
+        [TestMethod]
+        public void ProbarLecturaRespuestas()
+        {
+            Encuesta foo = new Encuesta("Mercadona", "Valore nuestra pescadilla");
+            Encuesta egg = new Encuesta("Electrónica Martínez", "Valore el trato");
+            meteRespuestas(foo);
+
+        }
+ 
     }
 }
