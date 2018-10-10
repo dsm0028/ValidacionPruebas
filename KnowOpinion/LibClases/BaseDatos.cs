@@ -8,19 +8,18 @@ namespace LibClases
 {
     class BaseDatos
     {
-        private List<Usuario> Lista_Usuarios = new List<Usuario>();
+        private Usuario admin;
         private List<Encuesta> Lista_Encuestas = new List<Encuesta>();
-        private Usuario u_auth;
-        public Usuario Usuario_autenticado
+        private bool estaAuthed;
+        public bool Autenticado
         {
-            get { return u_auth; }
-            set { this.u_auth = value; }
+            get { return estaAuthed; }
+            set { estaAuthed = value; }
         }
 
         public BaseDatos()
         {
-            this.Usuario_autenticado = null;
-            
+            this.admin = new Usuario("comandante666", "jofrillos");
         }
 
 
@@ -36,6 +35,22 @@ namespace LibClases
                 }
             }
             return activas;
+        }
+
+        public bool Login(string user, string p)
+        {
+            
+            if(admin.Cuenta.Equals(user) && admin.comprobarcontrasena(p))
+            {
+                estaAuthed = true;
+            }
+            return estaAuthed;
+        }
+
+        public bool Logoff()
+        {
+            estaAuthed = false;
+            return estaAuthed;
         }
 
     }

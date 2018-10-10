@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibClases
 {
-    class Respuesta
+    public class Respuesta
     {
         private int valoracion;
         public int Valoracion

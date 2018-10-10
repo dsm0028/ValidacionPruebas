@@ -34,18 +34,10 @@ namespace LibClases
 
 		}
     
-        public Usuario(int _idUsuario ,string _cuenta, string _contrasena)
+        public Usuario(string _cuenta, string _contrasena)
         {
-            this.idUsuario = _idUsuario;
             this.cuenta = _cuenta;
             this.contrasena = Encriptar(_contrasena);
-        }
-
-        private int idUsuario;
-        public int IdUsuario
-        {
-            get { return idUsuario; }
-            set { this.idUsuario = value; }
         }
 
         private string cuenta;

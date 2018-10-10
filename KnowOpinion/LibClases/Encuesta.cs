@@ -31,6 +31,17 @@ namespace LibClases
 
         private List<Respuesta> lista_respuestas = new List<Respuesta>();
 
+        public List<Respuesta> ObtenerRespuestas()
+        {
+            return lista_respuestas;
+        }
+
+        public void AnadirRespuesta(Respuesta e)
+        {
+
+            lista_respuestas.Add(e);
+
+        }
 
     }
 }

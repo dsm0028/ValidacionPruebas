@@ -14,11 +14,7 @@ namespace LibClases.test
             Usuario u = new Usuario("NoMbRe");
             Assert.AreEqual(u.Cuenta, "NoMbRe");
 
-            Usuario u1 = new Usuario(15, "cuenta1", "PasTWrd");
-            Assert.AreEqual(u1.IdUsuario, 15);
-            Assert.AreNotEqual(u1.IdUsuario, 5);
-            Assert.AreNotEqual(u1.IdUsuario, "");
-            Assert.AreEqual(u1.Cuenta, "cuenta1");
+            Usuario u1 = new Usuario("cuenta1", "PasTWrd");
             Assert.AreNotEqual(u1.Cuenta, "cuentoti1");
             Assert.AreNotEqual(u1.Cuenta, "");
             Assert.AreEqual(u1.Contrasena, "PasTWrd");
@@ -29,7 +25,7 @@ namespace LibClases.test
         [TestMethod]
         public void TestComprobarContraseña()
         {
-            Usuario u = new Usuario(1, "Cuenta365", "Yatube");
+            Usuario u = new Usuario("Cuenta365", "Yatube");
             Assert.IsTrue(u.comprobarcontrasena("Yatube"));
             Assert.IsFalse(u.comprobarcontrasena("Nemo"));
 
@@ -38,7 +34,7 @@ namespace LibClases.test
         [TestMethod]
         public void TestAsignarContrasena()
         {
-            Usuario u = new Usuario(1, "Cuenta36", "ContAsig");
+            Usuario u = new Usuario("Cuenta36", "ContAsig");
             u.asignacontrasena("tiburcio");
             Assert.IsTrue(u.comprobarcontrasena("tiburcio"));
             Assert.IsFalse(u.comprobarcontrasena("ContAsig"));
@@ -47,7 +43,7 @@ namespace LibClases.test
         [TestMethod]
         public void TestGrabarContrasena()
         {
-            Usuario u = new Usuario(1, "Cuenta36", "ContAsig");
+            Usuario u = new Usuario("Cuenta36", "ContAsig");
             Assert.IsFalse(u.Grabado);
             u.grabarcontrasena();
             Assert.IsTrue(u.Grabado);
