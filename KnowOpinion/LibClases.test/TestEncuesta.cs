@@ -81,7 +81,7 @@ namespace LibClases.test
         [TestMethod]
         public void ProbarGenEncuestas()
         {
-            Encuesta foo = new Encuesta("Encuesta Limpieza Lavabos", "estan sucios o no?");
+            Encuesta foo = new Encuesta(1,"Encuesta Limpieza Lavabos", "estan sucios o no?");
             Assert.AreEqual(foo.Titulo, "Encuesta Limpieza Lavabos");
             Assert.IsTrue(foo.Activa);
             Assert.IsTrue(foo.ObtenerRespuestas().Count == 0);
@@ -91,7 +91,8 @@ namespace LibClases.test
         [TestMethod]
         public void ProbarAdicionRespuestas()
         {
-            Encuesta foo = new Encuesta("Mercadona", "Valore nuestra pescadilla");
+            Encuesta foo = new Encuesta(1, "Mercadona", "Valore nuestra pescadilla");
+            Assert.IsTrue(foo.ObtenerRespuestas().Count == 0);
             meteRespuestas(foo);
             Assert.IsTrue(foo.ObtenerRespuestas().Count > 0);
             Assert.IsTrue(foo.ObtenerRespuestas().Count == 21);
@@ -100,11 +101,28 @@ namespace LibClases.test
         [TestMethod]
         public void ProbarLecturaRespuestas()
         {
-            Encuesta foo = new Encuesta("Mercadona", "Valore nuestra pescadilla");
-            Encuesta egg = new Encuesta("Electrónica Martínez", "Valore el trato");
+            Encuesta foo = new Encuesta(1, "Mercadona", "Valore nuestra pescadilla");
+            Encuesta egg = new Encuesta(2, "Electrónica Martínez", "Valore el trato");
             meteRespuestas(foo);
 
+            //empieza el id desde el 1
+            Assert.IsNull(foo.ObtenerRespuestaPorId(0));
+
+            Assert.AreEqual(foo.ObtenerRespuestaPorId(1).Valoracion, 1);
+            Assert.AreEqual(foo.ObtenerRespuestaPorId(1).Descripcion, "malisima");
+      
         }
- 
+
+        [TestMethod]
+        public void ProbarCambiosRespuestas()
+        {
+            Encuesta foo = new Encuesta(1, "Mercadona", "Valore nuestra pescadilla");
+            meteRespuestas(foo);
+
+
+            foo.QuitaRespuesta(3);
+            Assert.IsNull(foo.ObtenerRespuestaPorId(3));
+        }
+
     }
 }

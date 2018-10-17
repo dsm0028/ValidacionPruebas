@@ -9,6 +9,8 @@ namespace LibClases
     public class Encuesta
     {
 
+        private int RESPUESTA_COUNT = 0;
+
         public Encuesta(int id, string tit, string des)
         {
             this.id = id;
@@ -47,16 +49,33 @@ namespace LibClases
 
         private List<Respuesta> lista_respuestas = new List<Respuesta>();
 
+        public void AnadirRespuesta(int val, string com)
+        {
+            RESPUESTA_COUNT += 1;
+            lista_respuestas.Add(new Respuesta(RESPUESTA_COUNT,val,com));
+
+        }
+
         public List<Respuesta> ObtenerRespuestas()
         {
             return lista_respuestas;
         }
 
-        public void AnadirRespuesta(int val, string com)
+        public Respuesta ObtenerRespuestaPorId(int id)
         {
+            foreach(Respuesta r in lista_respuestas)
+            {
+                if(r.Id == id)
+                {
+                    return r;
+                }
+            }
+            return null;
+        }
 
-            lista_respuestas.Add(new Respuesta(val,com));
-
+        public void QuitaRespuesta(int id)
+        {
+            lista_respuestas.Remove(ObtenerRespuestaPorId(id));
         }
 
     }

@@ -15,11 +15,11 @@ namespace LibClases.test
             Assert.AreEqual(u.Cuenta, "NoMbRe");
 
             Usuario u1 = new Usuario("cuenta1", "PasTWrd");
-            Assert.AreNotEqual(u1.Cuenta, "cuentoti1");
-            Assert.AreNotEqual(u1.Cuenta, "");
-            Assert.AreEqual(u1.Contrasena, "PasTWrd");
-            Assert.AreNotEqual(u1.Contrasena, "NemoSeVa");
-            Assert.AreNotEqual(u1.Contrasena, "");
+            //¡la contraseña no puede estar en texto plano!
+            Assert.AreNotEqual(u1.Contrasena, "PasTWrd");
+            //para ver si generamos bien la contraseña usamos el metodo
+            Assert.IsTrue(u1.comprobarcontrasena("PasTWrd"));
+
         }
 
         [TestMethod]
