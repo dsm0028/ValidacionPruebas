@@ -67,18 +67,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PaginaWeb.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Web.config" />
+    <Content Include="ElegirEncuestas.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PaginaWeb.aspx.cs">
-      <DependentUpon>PaginaWeb.aspx</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PaginaWeb.aspx.designer.cs">
-      <DependentUpon>PaginaWeb.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ElegirEncuestas.aspx.cs">
+      <DependentUpon>ElegirEncuestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElegirEncuestas.aspx.designer.cs">
+      <DependentUpon>ElegirEncuestas.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

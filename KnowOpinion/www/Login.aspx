@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PaginaWeb.aspx.cs" Inherits="www.PaginaWeb" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="www.PaginaWeb" %>
 
 <!DOCTYPE html>
 
@@ -52,7 +52,9 @@
                 <td class="auto-style9">
                     <asp:Label ID="Lbl_usuario" runat="server" Text="Usuario"></asp:Label>
                 </td>
-                <td class="auto-style10"></td>
+                <td class="auto-style10">
+                    <asp:TextBox ID="Tbox_usuario" runat="server" Width="171px"></asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style7"></td>
@@ -65,7 +67,9 @@
             </tr>
             <tr>
                 <td class="auto-style6">&nbsp;</td>
-                <td class="auto-style4">&nbsp;</td>
+                <td class="auto-style4">
+                    <asp:Button ID="Btn_Login" runat="server" Text="Iniciar sesión" Width="98px" />
+                </td>
                 <td>&nbsp;</td>
             </tr>
         </table>

@@ -31,6 +31,15 @@ namespace www {
         protected global::System.Web.UI.WebControls.Label Lbl_usuario;
         
         /// <summary>
+        /// Control Tbox_usuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Tbox_usuario;
+        
+        /// <summary>
         /// Control Lbl_contraseña.
         /// </summary>
         /// <remarks>
@@ -47,5 +56,14 @@ namespace www {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Tbx_contraseña;
+        
+        /// <summary>
+        /// Control Btn_Login.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Login;
     }
 }
