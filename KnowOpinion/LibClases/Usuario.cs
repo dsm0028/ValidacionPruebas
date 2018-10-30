@@ -133,5 +133,22 @@ namespace LibClases
         {
             Grabado = true;
         }
+
+        public override bool Equals(object obj)
+        {
+            Usuario usu = obj as Usuario;
+            if(this.cuenta == usu.cuenta)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.cuenta.GetHashCode();
+
+        }
+
     }
 }

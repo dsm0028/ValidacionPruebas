@@ -78,5 +78,21 @@ namespace LibClases
             lista_respuestas.Remove(ObtenerRespuestaPorId(id));
         }
 
+        public override bool Equals(object obj)
+        {
+            Encuesta usu = obj as Encuesta;
+            if (this.id == usu.id)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.id;
+
+        }
+
     }
 }
