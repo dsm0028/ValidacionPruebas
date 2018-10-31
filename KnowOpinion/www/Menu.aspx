@@ -31,7 +31,9 @@
                 <tr>
                     <td class="auto-style26">&nbsp;</td>
                     <td class="auto-style25"><strong><h1 class="auto-style24">Menú Principal</h1></strong></td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="Lbl_usuario" runat="server" Text="Bienvenido usuario: "></asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style26">&nbsp;</td>
