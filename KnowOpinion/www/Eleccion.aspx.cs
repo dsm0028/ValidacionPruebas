@@ -10,10 +10,10 @@ namespace www
 {
     public partial class Eleccion : System.Web.UI.Page
     {
-        int valoracion = 0;
         List<ListItem> encuestasActivas = new List<ListItem>();
-        BaseDatos bd = new BaseDatos();
+        BaseDatos bd = null;
         Encuesta activas;
+        int valoracion;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,6 +23,11 @@ namespace www
             {
                 bd = new BaseDatos();
                 Session["bd"] = bd;
+            }
+
+            if(Session["val"] == null)
+            {
+                Session["val"] = 0;
             }
 
             if (Session["Encuesta"] != null)
@@ -42,22 +47,26 @@ namespace www
 
         protected void ImageButton_Triste_Click(object sender, ImageClickEventArgs e)
         {
-            valoracion = 2;
+            Session["val"] = 2;
+            Lbl_valoracion.Text = "Valoracion actual: " + Session["val"].ToString();
         }
 
         protected void ImageButton_Enfadado_Click(object sender, ImageClickEventArgs e)
         {
-            valoracion = 1;
+            Session["val"] = 1;
+            Lbl_valoracion.Text = "Valoracion actual: " + Session["val"].ToString();
         }
 
         protected void ImageButton_Contento_Click(object sender, ImageClickEventArgs e)
         {
-            valoracion = 3;
+            Session["val"] = 3;
+            Lbl_valoracion.Text = "Valoracion actual: " + Session["val"].ToString();
         }
 
         protected void ImageButton_Enamorado_Click(object sender, ImageClickEventArgs e)
         {
-            valoracion = 4;
+            Session["val"] = 4;
+            Lbl_valoracion.Text = "Valoracion actual: " + Session["val"].ToString();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -68,11 +77,18 @@ namespace www
 
         protected void Button_Enviar_Click(object sender, EventArgs e)
         {
-            foreach(ListItem j in SeleccionarEncuesta.Items)
+            if ((int)Session["val"] != 0)
             {
-                if (j.Selected)
+                foreach (ListItem j in SeleccionarEncuesta.Items)
                 {
-                    //no se como pasar de un list item a una encuesta xd
+                    if (j.Selected)
+                    {
+                        int id = Int32.Parse(j.Value);
+                        Encuesta enc = bd.GetEncuestaById(id);
+                        enc.AnadirRespuesta((int)Session["val"], TextBox1.Text);
+                        Lbl_ok.Visible = true;
+                        break;
+                    }
                 }
             }
         }

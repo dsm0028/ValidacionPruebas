@@ -23,9 +23,12 @@ namespace www
 
         protected void Btn_Login_Click(object sender, EventArgs e)
         {
-            bd.Login(Tbox_usuario.Text, Tbx_contraseña.Text);
-            Response.BufferOutput = true;
-            Response.Redirect("Menu.aspx");
+            if(bd.Login(Tbox_usuario.Text, Tbx_contraseña.Text))
+            {
+                Response.BufferOutput = true;
+                Response.Redirect("Menu.aspx");
+            }
+
         }
     }
 }

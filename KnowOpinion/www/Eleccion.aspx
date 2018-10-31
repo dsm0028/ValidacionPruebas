@@ -105,7 +105,9 @@
             </tr>
             <tr>
                 <td class="auto-style3"><strong>Valoración:</strong></td>
-                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style3">
+                    <asp:Label ID="Lbl_valoracion" runat="server" Text="Escoja una cara."></asp:Label>
+                </td>
                 <td class="auto-style8">&nbsp;</td>
                 <td class="auto-style10">&nbsp;</td>
                 <td class="auto-style13">&nbsp;</td>
@@ -113,16 +115,16 @@
             </tr>
             <tr>
                 <td class="auto-style3">
-                    <asp:ImageButton ID="ImageButton_Enfadado" runat="server" CssClass="auto-style14" Height="189px" ImageUrl="./Emojis/enfadado.png" Width="253px" />
+                    <asp:ImageButton ID="ImageButton_Enfadado" runat="server" CssClass="auto-style14" Height="189px" ImageUrl="./Emojis/enfadado.png" Width="253px" OnClick="ImageButton_Enfadado_Click" />
                 </td>
                 <td class="auto-style3">
-                    <asp:ImageButton ID="ImageButton_Triste" runat="server" CssClass="auto-style18" Height="159px" ImageUrl="./Emojis/triste.jpg" Width="162px" />
+                    <asp:ImageButton ID="ImageButton_Triste" runat="server" CssClass="auto-style18" Height="159px" ImageUrl="./Emojis/triste.jpg" Width="162px" OnClick="ImageButton_Triste_Click" />
                 </td>
                 <td class="auto-style8">
-                    <asp:ImageButton ID="ImageButton_Contento" runat="server" CssClass="auto-style19" Height="182px" ImageUrl="./Emojis/contento.jpg" Width="187px" />
+                    <asp:ImageButton ID="ImageButton_Contento" runat="server" CssClass="auto-style19" Height="182px" ImageUrl="./Emojis/contento.jpg" Width="187px" OnClick="ImageButton_Contento_Click" />
                 </td>
                 <td class="auto-style10">
-                    <asp:ImageButton ID="ImageButton_Enamorado" runat="server" CssClass="auto-style15" Height="179px" ImageUrl="./Emojis/enamorado.jpg" Width="171px" />
+                    <asp:ImageButton ID="ImageButton_Enamorado" runat="server" CssClass="auto-style15" Height="179px" ImageUrl="./Emojis/enamorado.jpg" Width="171px" OnClick="ImageButton_Enamorado_Click" />
                 </td>
                 <td class="auto-style13">&nbsp;</td>
                 <td class="auto-style16">&nbsp;</td>
@@ -156,7 +158,8 @@
             <tr>
                 <td>&nbsp;</td>
                 <td class="auto-style3">
-                    <input id="Button_Enviar" type="button" value="Enviar" /></td>
+                    <asp:Button ID="Button1" runat="server" OnClick="Button_Enviar_Click" Text="Enviar" />
+                </td>
                 <td>
                     &nbsp;</td>
                 <td class="auto-style8">
@@ -169,7 +172,8 @@
             <tr>
                 <td>&nbsp;</td>
                 <td class="auto-style3">
-                    &nbsp;</td>
+                    <asp:Label ID="Lbl_ok" runat="server" Text="Enviado correctamente." Visible="False"></asp:Label>
+                </td>
                 <td>
                     &nbsp;</td>
                 <td class="auto-style8">

@@ -24,6 +24,10 @@ namespace www
             {
                 Lbl_usuario.Text = "Bienvenido, " + bd.NombreAdmin;
             }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
 
         }
 
@@ -53,6 +57,7 @@ namespace www
 
         protected void Button_CerrarSesion_Click(object sender, EventArgs e)
         {
+            bd.Logoff();
             Response.BufferOutput = true;
             Response.Redirect("Login.aspx");
         }
