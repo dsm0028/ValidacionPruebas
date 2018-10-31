@@ -13,5 +13,11 @@ namespace www
         {
 
         }
+
+        protected void Button_Aceptar_Click(object sender, EventArgs e)
+        {
+            Response.BufferOutput = true;
+            Response.Redirect("Menu.aspx");
+        }
     }
 }
