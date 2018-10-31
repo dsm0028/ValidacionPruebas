@@ -13,14 +13,20 @@
         .auto-style25 {
             width: 307px;
         }
-        .auto-style26 {
-            width: 272px;
-        }
         .auto-style27 {
-            width: 89%;
+            width: 53%;
         }
-        .auto-style22 {
-            margin-left: 359px;
+        .auto-style29 {
+            margin-left: 0px;
+        }
+        .auto-style30 {
+            width: 400px;
+        }
+        .auto-style31 {
+            width: 322px;
+        }
+        .auto-style32 {
+            margin-left: 71px;
         }
     </style>
 </head>
@@ -29,41 +35,51 @@
         <div>
             <table class="auto-style27">
                 <tr>
-                    <td class="auto-style26">&nbsp;</td>
+                    <td class="auto-style31">&nbsp;</td>
                     <td class="auto-style25"><strong><h1 class="auto-style24">Menú Principal</h1></strong></td>
                     <td>
                         <asp:Label ID="Lbl_usuario" runat="server" Text="Bienvenido usuario: "></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style26">&nbsp;</td>
+                    <td class="auto-style31">
+                        <asp:Button ID="Button_AltaEncuesta" runat="server" Height="54px" OnClick="Button1_Click" Text="Alta Encuesta" Width="213px" CssClass="auto-style29" />
+                    </td>
                     <td class="auto-style25">
-                        <asp:Button ID="Button_AltaEncuesta" runat="server" Height="54px" OnClick="Button1_Click" Text="Alta Encuesta" Width="213px" />
-                    </td>
-                    <td>
-                        <asp:Button ID="Button_BorrarEncuesta" runat="server" Height="46px" OnClick="Button1_Click" Text="Borrar Encuesta" Width="203px" />
+                        &nbsp;</td>
+                    <td class="auto-style30">
+                        <asp:Button ID="Button_BorrarEncuesta" runat="server" Height="52px" OnClick="Button_BorrarEncuesta_Click" Text="Borrar Encuesta" Width="228px" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style26">&nbsp;</td>
+                    <td class="auto-style31">&nbsp;</td>
                     <td class="auto-style25">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style30">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style26">&nbsp;</td>
+                    <td class="auto-style31">
+                        <asp:Button ID="Button_ModificarEncuesta" runat="server" Height="51px" OnClick="Button_ModificarEncuesta_Click" Text="Modificar Encuesta" Width="212px" />
+                    </td>
                     <td class="auto-style25">
-                        <asp:Button ID="Button_ModificarEncuesta" runat="server" Height="63px" OnClick="Button1_Click" Text="Modificar Encuesta" Width="214px" />
-                    </td>
-                    <td>
-                        <asp:Button ID="Button_ADEncuesta0" runat="server" Height="54px" OnClick="Button1_Click" Text="Activar/Desactivar Encuesta" Width="314px" />
+                        &nbsp;</td>
+                    <td class="auto-style30">
+                        <asp:Button ID="Button_ADEncuesta" runat="server" Height="50px" OnClick="Button_ADEncuesta_Click" Text="Activar/Desactivar Encuesta" Width="228px" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style26">&nbsp;</td>
-                    <td class="auto-style25">&nbsp;</td>
-                    <td>
-                    <asp:Button ID="Button_CerrarSesion" runat="server" CssClass="auto-style22" OnClick="Button1_Click" Text="Cerrar Sesión" Width="170px" />
+                    <td class="auto-style31">&nbsp;</td>
+                    <td class="auto-style25">
+                        &nbsp;</td>
+                    <td class="auto-style30">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style31">&nbsp;</td>
+                    <td class="auto-style25">
+                        <asp:Button ID="Button_CerrarSesion" runat="server" CssClass="auto-style32" OnClick="Button_CerrarSesion_Click" Text="Cerrar Sesion" />
                     </td>
+                    <td class="auto-style30">
+                        &nbsp;</td>
                 </tr>
             </table>
         </div>

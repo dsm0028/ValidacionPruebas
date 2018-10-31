@@ -10,7 +10,7 @@
 namespace www {
     
     
-    public partial class Menu {
+    public partial class BorrarEncuesta {
         
         /// <summary>
         /// Control form1.
@@ -22,57 +22,39 @@ namespace www {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control Lbl_usuario.
+        /// Control CheckBox_E1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl_usuario;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_E1;
         
         /// <summary>
-        /// Control Button_AltaEncuesta.
+        /// Control CheckBox_E2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_AltaEncuesta;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_E2;
         
         /// <summary>
-        /// Control Button_BorrarEncuesta.
+        /// Control CheckBox_E3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_BorrarEncuesta;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_E3;
         
         /// <summary>
-        /// Control Button_ModificarEncuesta.
+        /// Control Button_Aceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_ModificarEncuesta;
-        
-        /// <summary>
-        /// Control Button_ADEncuesta.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_ADEncuesta;
-        
-        /// <summary>
-        /// Control Button_CerrarSesion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_CerrarSesion;
+        protected global::System.Web.UI.WebControls.Button Button_Aceptar;
     }
 }

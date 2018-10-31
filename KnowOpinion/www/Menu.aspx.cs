@@ -29,7 +29,32 @@ namespace www
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            Response.BufferOutput = true;
+            Response.Redirect("AltaEncuesta.aspx");
+        }
 
+        protected void Button_BorrarEncuesta_Click(object sender, EventArgs e)
+        {
+            Response.BufferOutput = true;
+            Response.Redirect("BorrarEncuesta.aspx");
+        }
+
+        protected void Button_ModificarEncuesta_Click(object sender, EventArgs e)
+        {
+            Response.BufferOutput = true;
+            Response.Redirect("ModificarEncuesta.aspx");
+        }
+
+        protected void Button_ADEncuesta_Click(object sender, EventArgs e)
+        {
+            Response.BufferOutput = true;
+            Response.Redirect("ADEncuesta.aspx");
+        }
+
+        protected void Button_CerrarSesion_Click(object sender, EventArgs e)
+        {
+            Response.BufferOutput = true;
+            Response.Redirect("Login.aspx");
         }
     }
 }

@@ -70,12 +70,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ADEncuesta.aspx" />
+    <Content Include="AltaEncuesta.aspx" />
+    <Content Include="BorrarEncuesta.aspx" />
     <Content Include="Eleccion.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Menu.aspx" />
+    <Content Include="ModificarEncuesta.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADEncuesta.aspx.cs">
+      <DependentUpon>ADEncuesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADEncuesta.aspx.designer.cs">
+      <DependentUpon>ADEncuesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaEncuesta.aspx.cs">
+      <DependentUpon>AltaEncuesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaEncuesta.aspx.designer.cs">
+      <DependentUpon>AltaEncuesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BorrarEncuesta.aspx.cs">
+      <DependentUpon>BorrarEncuesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BorrarEncuesta.aspx.designer.cs">
+      <DependentUpon>BorrarEncuesta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Eleccion.aspx.cs">
       <DependentUpon>Eleccion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -96,6 +121,13 @@
     </Compile>
     <Compile Include="Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarEncuesta.aspx.cs">
+      <DependentUpon>ModificarEncuesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarEncuesta.aspx.designer.cs">
+      <DependentUpon>ModificarEncuesta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
