@@ -10,15 +10,25 @@ namespace www
 {
     public partial class PaginaWeb : System.Web.UI.Page
     {
+        BaseDatos bd = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            bd = (BaseDatos)Session["bd"];
+            if (bd == null)
+            {
+                bd = new BaseDatos();
+                Session["bd"] = bd;
+            }
         }
 
         protected void Btn_Login_Click(object sender, EventArgs e)
         {
-            Response.BufferOutput = true;
-            Response.Redirect("Menu.aspx");
+            if(bd.Login(Tbox_usuario.Text, Tbx_contraseña.Text))
+            {
+                Response.BufferOutput = true;
+                Response.Redirect("Menu.aspx");
+            }
+
         }
     }
 }

@@ -12,6 +12,10 @@ namespace LibClases
         private List<Encuesta> Lista_Encuestas = new List<Encuesta>();
         private int ENCUESTA_COUNT = 0;
         
+        public string NombreAdmin
+        {
+            get { return admin.Nombre + " " + admin.Apellido;  }
+        }
 
         private bool estaAuthed;
         public bool Autenticado
@@ -23,6 +27,10 @@ namespace LibClases
         public BaseDatos()
         {
             this.admin = new Usuario("comandante666", "jofrillos");
+            this.admin.Nombre = "Fernando";
+            this.admin.Apellido = "Fernandoso";
+            ENCUESTA_COUNT += 1;
+            this.Lista_Encuestas.Add(new Encuesta(ENCUESTA_COUNT, "Prueba", "Descripcion"));
         }
 
 
