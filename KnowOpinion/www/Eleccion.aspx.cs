@@ -18,24 +18,24 @@ namespace www
         {
             activas = null;
             bd = (BaseDatos)Session["bd"];
-            if(bd == null)
+            if (bd == null)
             {
                 bd = new BaseDatos();
                 Session["bd"] = bd;
-
-                foreach(Encuesta en in bd.ObtenerActivas())
-                {
-                    encuestasActivas.Add(new ListItem(en.Titulo, (en.Id).ToString()));
-                }
-
-                SeleccionarEncuesta.DataSource = encuestasActivas;
-                SeleccionarEncuesta.DataBind();
-
-                if (Session["Encuesta"] != null)
-                {
-                    activas = (Encuesta)Session["Encuesta"];
-                }
             }
+
+            if (Session["Encuesta"] != null)
+            {
+                activas = (Encuesta)Session["Encuesta"];
+            }
+
+            foreach (Encuesta en in bd.ObtenerActivas())
+            {
+                encuestasActivas.Add(new ListItem(en.Titulo, (en.Id).ToString()));
+            }
+
+            SeleccionarEncuesta.DataSource = encuestasActivas;
+            SeleccionarEncuesta.DataBind();
         }
 
         protected void ImageButton_Triste_Click(object sender, ImageClickEventArgs e)
