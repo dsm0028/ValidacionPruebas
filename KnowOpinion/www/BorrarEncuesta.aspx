@@ -18,10 +18,11 @@
             width: 450px;
         }
         .auto-style27 {
-            width: 46%;
+            width: 49%;
+            height: 217px;
         }
         .auto-style29 {
-            width: 291px;
+            width: 1388px;
             height: 55px;
         }
         .auto-style30 {
@@ -33,7 +34,7 @@
             height: 55px;
         }
         .auto-style32 {
-            width: 291px;
+            width: 1388px;
             height: 26px;
         }
         .auto-style33 {
@@ -44,11 +45,11 @@
             width: 450px;
             height: 26px;
         }
-        .auto-style35 {
-            width: 291px;
-        }
         .auto-style36 {
             margin-left: 0px;
+        }
+        .auto-style37 {
+            width: 1388px;
         }
     </style>
 </head>
@@ -62,23 +63,25 @@
                     <td class="auto-style31"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style35">
-                        <asp:CheckBox ID="CheckBox_E1" runat="server" OnCheckedChanged="CheckBox_E1_CheckedChanged" Text=" Encuesta 1" />
+                    <td class="auto-style37">
+                        <strong>Seleccione encuesta:</strong></td>
+                    <td class="auto-style25">
+                        <asp:DropDownList ID="Seleccionar_BorrarEncuesta" runat="server" Height="18px" OnSelectedIndexChanged="Button_Aceptar_Click" Width="288px">
+                        </asp:DropDownList>
                     </td>
-                    <td class="auto-style25">&nbsp;</td>
                     <td class="auto-style26">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style32">
-                        <asp:CheckBox ID="CheckBox_E2" runat="server" OnCheckedChanged="CheckBox_E1_CheckedChanged" Text=" Encuesta 2" />
+                        &nbsp;</td>
+                    <td class="auto-style33">
+                        <asp:Label ID="Lbl_ErrorBorrar" runat="server" ForeColor="Red"></asp:Label>
                     </td>
-                    <td class="auto-style33"></td>
                     <td class="auto-style34"></td>
                 </tr>
                 <tr>
                     <td class="auto-style32">
-                        <asp:CheckBox ID="CheckBox_E3" runat="server" OnCheckedChanged="CheckBox_E1_CheckedChanged" Text=" Encuesta 3" />
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style33">&nbsp;</td>
                     <td class="auto-style34">&nbsp;</td>
                 </tr>

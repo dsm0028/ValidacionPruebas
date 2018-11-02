@@ -86,10 +86,14 @@ namespace www
                         int id = Int32.Parse(j.Value);
                         Encuesta enc = bd.GetEncuestaById(id);
                         enc.AnadirRespuesta((int)Session["val"], TextBox1.Text);
-                        Lbl_ok.Visible = true;
+                        Lbl_ok.Text = "Se ha enviado correctamente";
                         break;
                     }
                 }
+            }
+            else
+            {
+                Lbl_ok.Text = "Error!";
             }
         }
     }

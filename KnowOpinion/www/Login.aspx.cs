@@ -25,8 +25,13 @@ namespace www
         {
             if(bd.Login(Tbox_usuario.Text, Tbx_contraseña.Text))
             {
+                Label_ErrorLogin.Text = "";
                 Response.BufferOutput = true;
                 Response.Redirect("Menu.aspx");
+            }
+            else
+            {
+                Label_ErrorLogin.Text = "Error! Usuario o contraseña incorrectos";
             }
 
         }

@@ -30,7 +30,9 @@ namespace LibClases
             this.admin.Nombre = "Fernando";
             this.admin.Apellido = "Fernandoso";
             ENCUESTA_COUNT += 1;
-            this.Lista_Encuestas.Add(new Encuesta(ENCUESTA_COUNT, "Prueba", "Descripcion"));
+            this.Lista_Encuestas.Add(new Encuesta(ENCUESTA_COUNT, "Prueba 1", "Descripcion de prueba 1"));
+            this.Lista_Encuestas.Add(new Encuesta(ENCUESTA_COUNT, "Prueba 2", "Descripcion de prueba 2"));
+            this.Lista_Encuestas.Add(new Encuesta(ENCUESTA_COUNT, "Prueba 3", "Descripcion de prueba 3"));
         }
 
 
@@ -82,9 +84,9 @@ namespace LibClases
             return null;
         }
 
-        public void BorraEncuesta(int id)
+        public void BorraEncuesta(string titulo)
         {
-            Lista_Encuestas.Remove(GetEncuestaById(id));
+            Lista_Encuestas.Remove(GetEncuestaByTitulo(titulo));
         }
 
         public void AnadirRespuesta(Encuesta e, int valora, string comenta)

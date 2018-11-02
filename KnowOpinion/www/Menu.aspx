@@ -38,7 +38,7 @@
                     <td class="auto-style31">&nbsp;</td>
                     <td class="auto-style25"><strong><h1 class="auto-style24">Menú Principal</h1></strong></td>
                     <td>
-                        <asp:Label ID="Lbl_usuario" runat="server" Text="Bienvenido usuario: "></asp:Label>
+                        <asp:Label ID="Lbl_usuario" runat="server" Text="Bienvenido usuario: " ForeColor="#33CC33"></asp:Label>
                     </td>
                 </tr>
                 <tr>

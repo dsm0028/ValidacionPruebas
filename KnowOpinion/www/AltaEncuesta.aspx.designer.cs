@@ -22,22 +22,40 @@ namespace www {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control Tbox_NombreEncuesta.
+        /// Control TBox_NombreEncuesta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Tbox_NombreEncuesta;
+        protected global::System.Web.UI.WebControls.TextBox TBox_NombreEncuesta;
         
         /// <summary>
-        /// Control Tbox_Descripcion.
+        /// Control TBox_Descripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Tbox_Descripcion;
+        protected global::System.Web.UI.WebControls.TextBox TBox_Descripcion;
+        
+        /// <summary>
+        /// Control Lbl_AltaOk.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lbl_AltaOk;
+        
+        /// <summary>
+        /// Control Lbl_AltaFallido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lbl_AltaFallido;
         
         /// <summary>
         /// Control Button_Aceptar.

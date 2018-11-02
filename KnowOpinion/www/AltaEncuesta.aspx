@@ -36,25 +36,29 @@
                 <tr>
                     <td class="auto-style26"><strong>Nombre encuesta:</strong></td>
                     <td class="auto-style25">
-                    <asp:TextBox ID="Tbox_NombreEncuesta" runat="server" Width="260px"></asp:TextBox>
+                        <asp:TextBox ID="TBox_NombreEncuesta" runat="server" Width="280px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style26"><strong>Descripción:</strong></td>
                     <td class="auto-style25">
-                    <asp:TextBox ID="Tbox_Descripcion" runat="server" Width="260px"></asp:TextBox>
+                        <asp:TextBox ID="TBox_Descripcion" runat="server" Width="277px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style26">&nbsp;</td>
-                    <td class="auto-style25">&nbsp;</td>
+                    <td class="auto-style25">
+                        <asp:Label ID="Lbl_AltaOk" runat="server" ForeColor="#33CC33"></asp:Label>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style26">&nbsp;</td>
-                    <td class="auto-style25">&nbsp;</td>
+                    <td class="auto-style25">
+                        <asp:Label ID="Lbl_AltaFallido" runat="server" ForeColor="Red"></asp:Label>
+                    </td>
                     <td>
                         <asp:Button ID="Button_Aceptar" runat="server" CssClass="auto-style27" OnClick="Button_Aceptar_Click" Text="Aceptar" />
                     </td>

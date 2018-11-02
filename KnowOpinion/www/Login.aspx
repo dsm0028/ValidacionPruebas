@@ -87,6 +87,14 @@
                     <asp:Button ID="Btn_Login" runat="server" Text="Entrar" Width="127px" OnClick="Btn_Login_Click" CssClass="auto-style26" />
                 </td>
             </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style25">
+                    <asp:Label ID="Label_ErrorLogin" runat="server" ForeColor="Red"></asp:Label>
+                </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
         </table>
         <div>
         </div>

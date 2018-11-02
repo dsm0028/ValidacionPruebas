@@ -22,31 +22,22 @@ namespace www {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control CheckBox_E1.
+        /// Control Seleccionar_BorrarEncuesta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox_E1;
+        protected global::System.Web.UI.WebControls.DropDownList Seleccionar_BorrarEncuesta;
         
         /// <summary>
-        /// Control CheckBox_E2.
+        /// Control Lbl_ErrorBorrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox_E2;
-        
-        /// <summary>
-        /// Control CheckBox_E3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox_E3;
+        protected global::System.Web.UI.WebControls.Label Lbl_ErrorBorrar;
         
         /// <summary>
         /// Control Button_Aceptar.

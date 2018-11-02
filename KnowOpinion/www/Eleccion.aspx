@@ -96,12 +96,12 @@
                 <td class="auto-style1"></td>
             </tr>
             <tr>
-                <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style8">&nbsp;</td>
-                <td class="auto-style10">&nbsp;</td>
-                <td class="auto-style13">&nbsp;</td>
-                <td class="auto-style16">&nbsp;</td>
+                <td class="auto-style2"></td>
+                <td class="auto-style2"></td>
+                <td class="auto-style7"></td>
+                <td class="auto-style9"></td>
+                <td class="auto-style12"></td>
+                <td class="auto-style1"></td>
             </tr>
             <tr>
                 <td class="auto-style3"><strong>Valoración:</strong></td>
