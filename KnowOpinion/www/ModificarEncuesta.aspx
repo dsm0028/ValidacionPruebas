@@ -37,7 +37,7 @@
                 <tr>
                     <td class="auto-style26"><strong>Seleccionar Encuesta: </strong></td>
                     <td class="auto-style25">
-                        <asp:DropDownList ID="DropDownList_SelecEncu" runat="server" Height="16px" Width="339px">
+                        <asp:DropDownList ID="Seleccionar_ModificarEncuesta" runat="server" Height="22px" Width="329px">
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>
@@ -46,6 +46,13 @@
                     <td class="auto-style26"><strong>Modificación:</strong></td>
                     <td class="auto-style25">
                         <asp:TextBox ID="TextBox_Modificacion" runat="server" Width="330px"></asp:TextBox>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style26">&nbsp;</td>
+                    <td class="auto-style25">
+                        <asp:Label ID="Lbl_ErrorModificar" runat="server" ForeColor="Red"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                 </tr>

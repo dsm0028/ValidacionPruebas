@@ -22,13 +22,13 @@ namespace www {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control DropDownList_SelecEncu.
+        /// Control Seleccionar_ModificarEncuesta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_SelecEncu;
+        protected global::System.Web.UI.WebControls.DropDownList Seleccionar_ModificarEncuesta;
         
         /// <summary>
         /// Control TextBox_Modificacion.
@@ -38,6 +38,15 @@ namespace www {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox_Modificacion;
+        
+        /// <summary>
+        /// Control Lbl_ErrorModificar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lbl_ErrorModificar;
         
         /// <summary>
         /// Control Button_Aceptar.
