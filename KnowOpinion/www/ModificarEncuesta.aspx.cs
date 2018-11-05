@@ -28,7 +28,12 @@ namespace www
                     Session["bd"] = bd;
                 }
 
-                foreach (Encuesta en in bd.ObtenerTodas())
+                if (!bd.Autenticado)
+                {
+                    Response.Redirect("Login.aspx");
+                }
+
+                    foreach (Encuesta en in bd.ObtenerTodas())
                 {
                     encuestasTotales.Add(new ListItem(en.Titulo, (en.Id).ToString()));
                 }
@@ -41,18 +46,46 @@ namespace www
 
         protected void Button_A_Click(object sender, EventArgs e)
         {
+            bool changed = false;
+            bool fail = true;
             if (Session["ModificarEncuesta"] == null)
             {
                 foreach (ListItem modificar in Seleccionar_ModificarEncuesta.Items)
                 {
-                    if (modificar.Selected)
+                    if (modificar.Value == Seleccionar_ModificarEncuesta.SelectedValue)
                     {
-                        //Modificacion pendiente 
-                        Response.BufferOutput = true;
-                        Response.Redirect("Menu.aspx");
+                        fail = false;
+                        BaseDatos bd = (BaseDatos)Session["bd"];
+                        Encuesta enc = bd.GetEncuestaByTitulo(modificar.Value);
+                        if (TextBox_NuevoT.Text.Length > 0) { 
+                            enc.Titulo = TextBox_NuevoT.Text;
+                            changed = true;
+                        }
+
+                        if (Tb_NuevaD.Text.Length > 0)
+                        {
+                            enc.Descripcion = Tb_NuevaD.Text;
+                            changed = true;
+                        }
+
+                        if (!changed)
+                        {
+                            Lbl_ErrorModificar.Text = "No se ha modificado nada.";
+                            Lbl_ErrorModificar.Visible = true;
+                        }
+                        else
+                        {
+                            Response.BufferOutput = true;
+                            Response.Redirect("Menu.aspx");
+                        }
                         break;
                     }
 
+                }
+                if (fail)
+                {
+                    Lbl_ErrorModificar.Text = "Error!";
+                    Lbl_ErrorModificar.Visible = true;
                 }
 
             }

@@ -28,6 +28,11 @@ namespace www
                     Session["bd"] = bd;
                 }
 
+                if (!bd.Autenticado)
+                {
+                    Response.Redirect("Login.aspx");
+                }
+
                 foreach (Encuesta en in bd.ObtenerTodas())
                 {
                     encuestasTotales.Add(new ListItem(en.Titulo, (en.Id).ToString()));

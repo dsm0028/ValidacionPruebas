@@ -11,37 +11,39 @@ namespace www
     public partial class Eleccion : System.Web.UI.Page
     {
         List<ListItem> encuestasActivas = new List<ListItem>();
-        BaseDatos bd = null;
         Encuesta activas;
         int valoracion;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            activas = null;
-            bd = (BaseDatos)Session["bd"];
-            if (bd == null)
-            {
-                bd = new BaseDatos();
-                Session["bd"] = bd;
-            }
+            if (!IsPostBack) {
+                BaseDatos bd = (BaseDatos)Session["bd"];
+                activas = null;
 
-            if(Session["val"] == null)
-            {
-                Session["val"] = 0;
-            }
+                if (bd == null)
+                {
+                    bd = new BaseDatos();
+                    Session["bd"] = bd;
+                }
 
-            if (Session["Encuesta"] != null)
-            {
-                activas = (Encuesta)Session["Encuesta"];
-            }
+                if (Session["val"] == null)
+                {
+                    Session["val"] = 0;
+                }
 
-            foreach (Encuesta en in bd.ObtenerActivas())
-            {
-                encuestasActivas.Add(new ListItem(en.Titulo, (en.Id).ToString()));
-            }
+                if (Session["Encuesta"] != null)
+                {
+                    activas = (Encuesta)Session["Encuesta"];
+                }
 
-            SeleccionarEncuesta.DataSource = encuestasActivas;
-            SeleccionarEncuesta.DataBind();
+                foreach (Encuesta en in bd.ObtenerActivas())
+                {
+                    encuestasActivas.Add(new ListItem(en.Titulo, (en.Id).ToString()));
+                }
+
+                SeleccionarEncuesta.DataSource = encuestasActivas;
+                SeleccionarEncuesta.DataBind();
+            }
         }
 
 
@@ -81,11 +83,12 @@ namespace www
             {
                 foreach (ListItem j in SeleccionarEncuesta.Items)
                 {
-                    if (j.Selected)
+                    if (j.Value == SeleccionarEncuesta.SelectedValue)
                     {
-                        int id = Int32.Parse(j.Value);
-                        Encuesta enc = bd.GetEncuestaById(id);
+                        BaseDatos bd = (BaseDatos)Session["bd"];
+                        Encuesta enc = bd.GetEncuestaByTitulo(j.Value);
                         enc.AnadirRespuesta((int)Session["val"], TextBox1.Text);
+                        Lbl_ok.Visible = true;
                         Lbl_ok.Text = "Se ha enviado correctamente";
                         break;
                     }
@@ -93,6 +96,7 @@ namespace www
             }
             else
             {
+                Lbl_ok.Visible = true;
                 Lbl_ok.Text = "Error!";
             }
         }

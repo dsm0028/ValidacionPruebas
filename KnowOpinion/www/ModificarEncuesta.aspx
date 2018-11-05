@@ -18,7 +18,7 @@
             width: 317px;
         }
         .auto-style26 {
-            width: 199px;
+            width: 313px;
         }
         .auto-style27 {
             margin-left: 89px;
@@ -43,9 +43,17 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style26"><strong>Modificación:</strong></td>
+                    <td class="auto-style26"><strong>Nuevo titulo:</strong></td>
                     <td class="auto-style25">
-                        <asp:TextBox ID="TextBox_Modificacion" runat="server" Width="330px"></asp:TextBox>
+                        <asp:TextBox ID="TextBox_NuevoT" runat="server" Width="330px"></asp:TextBox>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style26">Nueva<br />
+                        descripcion:</td>
+                    <td class="auto-style25">
+                        <asp:TextBox ID="Tb_NuevaD" runat="server" Width="326px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -54,11 +62,6 @@
                     <td class="auto-style25">
                         <asp:Label ID="Lbl_ErrorModificar" runat="server" ForeColor="Red"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style26">&nbsp;</td>
-                    <td class="auto-style25">&nbsp;</td>
                     <td>
                         <asp:Button ID="Button_Aceptar" runat="server" CssClass="auto-style27" OnClick="Button_A_Click" Text="Aceptar" />
                     </td>

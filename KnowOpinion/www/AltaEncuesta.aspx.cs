@@ -26,6 +26,10 @@ namespace www
                     bd = new BaseDatos();
                     Session["bd"] = bd;
                 }
+                if (!bd.Autenticado)
+                {
+                    Response.Redirect("Login.aspx");
+                }
             }
         }
 

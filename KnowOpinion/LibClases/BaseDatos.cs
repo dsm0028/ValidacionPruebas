@@ -30,9 +30,9 @@ namespace LibClases
             this.admin.Nombre = "Fernando";
             this.admin.Apellido = "Fernandoso";
             ENCUESTA_COUNT += 1;
-            this.Lista_Encuestas.Add(new Encuesta(ENCUESTA_COUNT, "Prueba 1", "Descripcion de prueba 1"));
-            this.Lista_Encuestas.Add(new Encuesta(ENCUESTA_COUNT, "Prueba 2", "Descripcion de prueba 2"));
-            this.Lista_Encuestas.Add(new Encuesta(ENCUESTA_COUNT, "Prueba 3", "Descripcion de prueba 3"));
+            AddEncuesta("Prueba 1", "Descripcion de prueba 1");
+            AddEncuesta("Prueba 2", "Descripcion de prueba 2");
+            AddEncuesta("Prueba 3", "Descripcion de prueba 3");
         }
 
 

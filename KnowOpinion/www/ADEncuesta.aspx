@@ -64,7 +64,9 @@
                 </tr>
                 <tr>
                     <td class="auto-style26">&nbsp;</td>
-                    <td class="auto-style25">&nbsp;</td>
+                    <td class="auto-style25">
+                        <asp:Label ID="Lbl_err" runat="server" ForeColor="Red" Visible="False"></asp:Label>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>

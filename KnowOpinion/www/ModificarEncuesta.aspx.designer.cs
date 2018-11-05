@@ -31,13 +31,22 @@ namespace www {
         protected global::System.Web.UI.WebControls.DropDownList Seleccionar_ModificarEncuesta;
         
         /// <summary>
-        /// Control TextBox_Modificacion.
+        /// Control TextBox_NuevoT.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Modificacion;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_NuevoT;
+        
+        /// <summary>
+        /// Control Tb_NuevaD.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Tb_NuevaD;
         
         /// <summary>
         /// Control Lbl_ErrorModificar.
