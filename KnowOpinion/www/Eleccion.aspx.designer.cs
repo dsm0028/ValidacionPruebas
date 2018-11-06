@@ -31,6 +31,15 @@ namespace www {
         protected global::System.Web.UI.WebControls.DropDownList SeleccionarEncuesta;
         
         /// <summary>
+        /// Control L_desc.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label L_desc;
+        
+        /// <summary>
         /// Control Lbl_valoracion.
         /// </summary>
         /// <remarks>

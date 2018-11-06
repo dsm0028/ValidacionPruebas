@@ -38,7 +38,7 @@ namespace www
 
                 foreach (Encuesta en in bd.ObtenerActivas())
                 {
-                    encuestasActivas.Add(new ListItem(en.Titulo, (en.Id).ToString()));
+                    encuestasActivas.Add(new ListItem(en.Titulo + " - " + en.Descripcion, (en.Id).ToString()));
                 }
 
                 SeleccionarEncuesta.DataSource = encuestasActivas;
@@ -79,14 +79,16 @@ namespace www
 
         protected void Button_Enviar_Click(object sender, EventArgs e)
         {
+            string[] sep = new string[] { " - " };
             if ((int)Session["val"] != 0)
             {
                 foreach (ListItem j in SeleccionarEncuesta.Items)
                 {
                     if (j.Value == SeleccionarEncuesta.SelectedValue)
                     {
+                        string s = j.Value.Split(sep, StringSplitOptions.None)[0];
                         BaseDatos bd = (BaseDatos)Session["bd"];
-                        Encuesta enc = bd.GetEncuestaByTitulo(j.Value);
+                        Encuesta enc = bd.GetEncuestaByTitulo(s);
                         enc.AnadirRespuesta((int)Session["val"], TextBox1.Text);
                         Lbl_ok.Visible = true;
                         Lbl_ok.Text = "Se ha enviado correctamente";
@@ -97,7 +99,7 @@ namespace www
             else
             {
                 Lbl_ok.Visible = true;
-                Lbl_ok.Text = "Error!";
+                Lbl_ok.Text = "Error! Seleccione una valoración";
             }
         }
     }

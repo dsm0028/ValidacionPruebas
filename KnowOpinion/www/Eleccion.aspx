@@ -89,7 +89,9 @@
             </tr>
             <tr>
                 <td class="auto-style2"></td>
-                <td class="auto-style2"></td>
+                <td class="auto-style2">
+                    <asp:Label ID="L_desc" runat="server"></asp:Label>
+                </td>
                 <td class="auto-style7"></td>
                 <td class="auto-style9"></td>
                 <td class="auto-style12"></td>
