@@ -59,6 +59,7 @@ namespace LibClases
         {
             ENCUESTA_COUNT += 1;
             Lista_Encuestas.Add(new Encuesta(ENCUESTA_COUNT, titulo, des));
+            
         }
 
         public Encuesta GetEncuestaById(int id)

@@ -35,12 +35,22 @@ namespace www
 
         protected void Button_Aceptar_Click(object sender, EventArgs e)
         {
-            if (Session["AltaEncuesta"] == null)
+           
+            if (Session["AltaEncuesta"] == null )
             {
-                bd.AddEncuesta(TBox_NombreEncuesta.Text, TBox_Descripcion.Text);
-                Lbl_AltaOk.Text = "Se ha dado de alta la encuesta correctamente";
-                Response.BufferOutput = true;
-                Response.Redirect("Menu.aspx");
+                if (TBox_NombreEncuesta.Text.Length > 0 && TBox_Descripcion.Text.Length > 0)
+                {
+                    bd.AddEncuesta(TBox_NombreEncuesta.Text, TBox_Descripcion.Text);
+                    Lbl_AltaOk.Text = "Se ha dado de alta la encuesta correctamente";
+                    Response.BufferOutput = true;
+                    Response.Redirect("Menu.aspx");
+                }
+                else
+                {
+                    Lbl_AltaFallido.Text = "Error! Introduzca nombre y descripcion";
+                }
+                
+                
             }
             else
             {
