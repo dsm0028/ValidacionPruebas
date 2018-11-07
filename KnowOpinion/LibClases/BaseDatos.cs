@@ -29,7 +29,6 @@ namespace LibClases
             this.admin = new Usuario("comandante666", "jofrillos");
             this.admin.Nombre = "Fernando";
             this.admin.Apellido = "Fernandoso";
-            ENCUESTA_COUNT += 1;
             AddEncuesta("Prueba 1", "Descripcion de prueba 1");
             AddEncuesta("Prueba 2", "Descripcion de prueba 2");
             AddEncuesta("Prueba 3", "Descripcion de prueba 3");
