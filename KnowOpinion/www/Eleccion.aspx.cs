@@ -92,15 +92,20 @@ namespace www
                         enc.AnadirRespuesta((int)Session["val"], TextBox1.Text);
                         Lbl_ok.Visible = true;
                         Lbl_ok.Text = "Se ha enviado correctamente";
+                        
                         break;
+                        
                     }
                 }
+                
             }
             else
             {
                 Lbl_ok.Visible = true;
                 Lbl_ok.Text = "Error! Seleccione una valoración";
             }
+            
+            
         }
     }
 }
