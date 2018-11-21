@@ -20,17 +20,17 @@ namespace LibClases.test
             GeneracionEncuestas(foo);
 
             Assert.AreEqual(foo.ObtenerActivas().Count, foo.ObtenerTodas().Count);
-            Assert.AreEqual(foo.ObtenerActivas().Count, 3);
-            Assert.AreEqual(3, foo.ObtenerTodas().Count);
+            Assert.AreEqual(foo.ObtenerActivas().Count, 6);
+            Assert.AreEqual(6, foo.ObtenerTodas().Count);
         }
 
         [TestMethod]
         public void PruebaAdicionEncuesta()
         {
             BaseDatos foo = new BaseDatos();
-            Assert.AreEqual(foo.ObtenerTodas().Count, 0);
+            Assert.AreEqual(foo.ObtenerTodas().Count, 3); //se generan al lanzar la BD para que la web funcione.
             GeneracionEncuestas(foo);
-            Assert.AreNotEqual(foo.ObtenerTodas().Count, 0);
+            Assert.AreNotEqual(foo.ObtenerTodas().Count, 3);
         }
 
         [TestMethod]
@@ -40,7 +40,7 @@ namespace LibClases.test
             GeneracionEncuestas(foo);
 
             //debemos empezar desde el id = 1
-            Assert.AreEqual(foo.GetEncuestaById(1).Titulo, "Pole");
+            Assert.AreEqual(foo.GetEncuestaById(1).Titulo, "Prueba 1");
             Assert.IsNull(foo.GetEncuestaById(0));
 
         }
@@ -51,9 +51,9 @@ namespace LibClases.test
             BaseDatos foo = new BaseDatos();
             GeneracionEncuestas(foo);
 
-            Assert.IsNotNull(foo.GetEncuestaById(1));
-            foo.BorraEncuesta(foo.GetEncuestaById(1).Titulo);
-            Assert.IsNull(foo.GetEncuestaById(1));
+            Assert.IsNotNull(foo.GetEncuestaByTitulo("Pole"));
+            foo.BorraEncuesta("Pole");
+            Assert.IsNull(foo.GetEncuestaByTitulo("Pole"));
         }
 
         [TestMethod]
@@ -113,14 +113,14 @@ namespace LibClases.test
                 item.AnadirRespuesta(4, "esta buena");
             }
 
-            Assert.AreEqual(foo.GetEncuestaById(1).ObtenerRespuestaPorId(1).Valoracion, 1);
-            Assert.AreEqual(foo.GetEncuestaById(2).ObtenerRespuestaPorId(6).Valoracion, 3);
+            Assert.AreEqual(foo.GetEncuestaByTitulo("Pole").ObtenerRespuestaPorId(1).Valoracion, 1);
+            Assert.AreEqual(foo.GetEncuestaByTitulo("Prueba").ObtenerRespuestaPorId(6).Valoracion, 3);
 
-            foo.ActualizaRespuesta(2, 6, 1, "Terrible.");
-            Assert.AreEqual(foo.GetEncuestaById(2).ObtenerRespuestaPorId(6).Descripcion, "Terrible.");
-            foo.BorraRespuesta(1, 1);
-            Assert.IsNull(foo.GetEncuestaById(1).ObtenerRespuestaPorId(1));
-            Assert.IsNotNull(foo.GetEncuestaById(2).ObtenerRespuestaPorId(1));
+            foo.ActualizaRespuesta(6, 6, 1, "Terrible.");
+            Assert.AreEqual(foo.GetEncuestaById(6).ObtenerRespuestaPorId(6).Descripcion, "Terrible.");
+            foo.BorraRespuesta(4, 1);
+            Assert.IsNull(foo.GetEncuestaById(4).ObtenerRespuestaPorId(1));
+            Assert.IsNotNull(foo.GetEncuestaById(1).ObtenerRespuestaPorId(1));
 
         }
     }
