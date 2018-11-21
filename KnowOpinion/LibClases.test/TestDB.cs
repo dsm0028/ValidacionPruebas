@@ -52,7 +52,7 @@ namespace LibClases.test
             GeneracionEncuestas(foo);
 
             Assert.IsNotNull(foo.GetEncuestaById(1));
-            foo.BorraEncuesta(1);
+            foo.BorraEncuesta(foo.GetEncuestaById(1).Titulo);
             Assert.IsNull(foo.GetEncuestaById(1));
         }
 
