@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,11 +30,69 @@ namespace LibClases
             this.admin = new Usuario("comandante666", "jofrillos");
             this.admin.Nombre = "Fernando";
             this.admin.Apellido = "Fernandoso";
+            /*
             AddEncuesta("Prueba 1", "Descripcion de prueba 1");
             AddEncuesta("Prueba 2", "Descripcion de prueba 2");
-            AddEncuesta("Prueba 3", "Descripcion de prueba 3");
+            AddEncuesta("Prueba 3", "Descripcion de prueba 3");*/
         }
 
+        public void CargaEncuestaDeCSV(string path)
+        {
+            List<string> listaTitulos = new List<string>();
+            List<string> listaDesc = new List<string>();
+
+            using(var reader = new StreamReader(path))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(';');
+                    listaTitulos.Add(values[0]);
+                    listaDesc.Add(values[1]);
+                }
+            }
+
+            int contador = 0;
+            foreach (string t in listaTitulos){
+                AddEncuesta(t, listaDesc[contador]);
+                contador++;
+            }
+
+        }
+
+        public void CargaRespuestaDeCSV(string path)
+        {
+            List<string> listaEnc = new List<string>();
+            List<string> listaVal = new List<string>();
+            List<string> listaCom = new List<string>();
+            List<string> listaFecha = new List<string>();
+            List<string> listaHora = new List<string>();
+
+            using (var reader = new StreamReader(path))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(';');
+                    listaEnc.Add(values[0]);
+                    listaVal.Add(values[1]);
+                    listaCom.Add(values[2]);
+                    listaFecha.Add(values[3]);
+                    listaHora.Add(values[4]);
+                }
+            }
+
+            int contador = 0;
+            foreach (string t in listaEnc)
+            {
+                string fechaBuena = listaFecha[contador] + ' ' + listaHora[contador];
+                DateTime f = DateTime.Parse(fechaBuena);
+                AnadirRespuestaPerso(GetEncuestaById(int.Parse(t)),
+                    int.Parse(listaVal[contador]), listaCom[contador], f);
+                contador++;
+            }
+
+        }
 
 
         public List<Encuesta> ObtenerActivas()
@@ -92,6 +151,11 @@ namespace LibClases
         public void AnadirRespuesta(Encuesta e, int valora, string comenta)
         {
             e.AnadirRespuesta(valora, comenta);
+        }
+
+        public void AnadirRespuestaPerso(Encuesta e, int valora, string comenta, DateTime f)
+        {
+            e.AnadirRespuestaPersonalizada(valora, comenta, f);
         }
 
         public void ActualizaRespuesta(int encuestaId, int respuestaId, int nueva_val, string nueva_des)

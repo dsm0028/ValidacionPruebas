@@ -49,10 +49,27 @@ namespace LibClases
 
         private List<Respuesta> lista_respuestas = new List<Respuesta>();
 
+        public int NumRespuestas()
+        {
+            return lista_respuestas.Count;
+        }
+
+        public int NotaMaxima()
+        {
+            return lista_respuestas.Max().Valoracion;
+        }
+
         public void AnadirRespuesta(int val, string com)
         {
             RESPUESTA_COUNT += 1;
-            lista_respuestas.Add(new Respuesta(RESPUESTA_COUNT,val,com));
+            lista_respuestas.Add(new Respuesta(RESPUESTA_COUNT,val,com, DateTime.Now));
+
+        }
+
+        public void AnadirRespuestaPersonalizada(int val, string com, DateTime f)
+        {
+            RESPUESTA_COUNT += 1;
+            lista_respuestas.Add(new Respuesta(RESPUESTA_COUNT, val, com, f));
 
         }
 

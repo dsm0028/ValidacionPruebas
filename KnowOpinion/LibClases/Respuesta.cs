@@ -9,6 +9,13 @@ namespace LibClases
     public class Respuesta
     {
 
+        private DateTime fecha;
+        public DateTime Fecha
+        {
+            get { return fecha; }
+            set { fecha = value; }
+        }
+
         private int id;
         public int Id
         {
@@ -16,7 +23,7 @@ namespace LibClases
             set { id = value; }
         }
 
-        public Respuesta(int id, int v, string d)
+        public Respuesta(int id, int v, string d, DateTime fecha)
         {
             if (v >= 1 && v <= 4)
             {
@@ -29,6 +36,7 @@ namespace LibClases
 
             this.id = id;
             this.descripcion = d;
+            this.fecha = fecha;
         }
 
         private int valoracion;
