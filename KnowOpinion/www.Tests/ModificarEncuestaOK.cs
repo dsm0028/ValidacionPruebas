@@ -50,6 +50,7 @@ namespace SeleniumTests
             driver.FindElement(By.Id("Btn_Login")).Click();
 
             driver.Navigate().GoToUrl(baseURL + "/Menu.aspx");
+
             driver.FindElement(By.Id("Button_ModificarEncuesta")).Click();
             new SelectElement(driver.FindElement(By.Id("Seleccionar_ModificarEncuesta"))).SelectByText("Prueba 3");
             driver.FindElement(By.Id("TextBox_NuevoT")).Clear();
