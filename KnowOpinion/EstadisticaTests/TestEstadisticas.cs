@@ -31,8 +31,8 @@ namespace EstadisticaTests
             DataRow activas = t.Rows[0];
             DataRow inactivas = t.Rows[1];
 
-            Assert.AreEqual(8, activas[0]);
-            Assert.AreEqual(0, activas[1]);
+            Assert.AreEqual(8, activas[1]);
+            Assert.AreEqual(0, inactivas[1]);
 
         }
 

@@ -20,7 +20,16 @@ namespace EstadisticaClases
         public int numeroEncuestas()
         {
             List<Encuesta> lista = bd.ObtenerTodas();
-            return lista.Count;
+            int contador = 0;
+            foreach(Encuesta e in lista)
+            {
+                List<Respuesta> r = e.ObtenerRespuestas();
+                if (r.Count > 0)
+                {
+                    contador++;
+                }
+            }
+            return contador;
         }
 
         public DataTable estadoEncuestas()
@@ -37,17 +46,19 @@ namespace EstadisticaClases
 
         public double media()
         {
-            int sumatorio = 0;
+            double sumatorio = 0.0;
+            double numeroRespuestas = 0.0;
             List<Encuesta> lista = bd.ObtenerTodas();
             foreach(Encuesta e in lista)
             {
                 foreach(Respuesta r in e.ObtenerRespuestas())
                 {
                     sumatorio += r.Valoracion;
+                    numeroRespuestas++;
                 }
             }
 
-            return sumatorio / numeroEncuestas();
+            return sumatorio / numeroRespuestas;
 
         }
 
@@ -64,14 +75,16 @@ namespace EstadisticaClases
                 }
             }
 
+            vals.Sort();
+
             int midpoint = vals.Count();
-            if(midpoint % 2 == 0)
+            if(midpoint % 2 != 0)
             {
-                return vals[midpoint / 2];
+                return vals[(midpoint / 2) - 1];
             } else
             {
-                double half = midpoint / 2;
-                int t = vals[(int)Math.Round(half)] + vals[(int)Math.Round(half) + 1];
+                double half = (midpoint / 2) - 1;
+                double t = vals[(int)Math.Round(half)] + vals[(int)Math.Round(half) + 1];
                 return t / 2;
             }
 
@@ -98,7 +111,7 @@ namespace EstadisticaClases
                 varianza += Math.Pow(Convert.ToDouble(i) - med, 2);
             }
 
-            return Math.Sqrt(varianza / (lista.Count - 1));
+            return Math.Sqrt(varianza / (vals.Count - 1));
 
         }
 

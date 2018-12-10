@@ -9,11 +9,12 @@ namespace LibClases.test
         [TestMethod]
         public void PruebaRespuesta()
         {
-            Respuesta r1 = new Respuesta(1, 1,"Muy mal");
-            Respuesta r2 = new Respuesta(2, 2, "mal");
-            Respuesta r3 = new Respuesta(3, 3, "bien");
-            Respuesta r4 = new Respuesta(4, 4, "Muy bien");
-            Respuesta rvacia = new Respuesta(5, 420, "Este valor es inválido");
+            DateTime fecha = DateTime.Now;
+            Respuesta r1 = new Respuesta(1, 1,"Muy mal", fecha);
+            Respuesta r2 = new Respuesta(2, 2, "mal", fecha);
+            Respuesta r3 = new Respuesta(3, 3, "bien", fecha);
+            Respuesta r4 = new Respuesta(4, 4, "Muy bien", fecha);
+            Respuesta rvacia = new Respuesta(5, 420, "Este valor es inválido", fecha);
 
             Assert.AreEqual(r1.Valoracion, 1);
             Assert.AreEqual(r2.Valoracion, 2);

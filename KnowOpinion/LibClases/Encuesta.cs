@@ -56,7 +56,21 @@ namespace LibClases
 
         public int NotaMaxima()
         {
-            return lista_respuestas.Max().Valoracion;
+            if(lista_respuestas.Count == 0)
+            {
+                return 0;
+            }
+
+            int maxima = 1;
+            foreach(Respuesta r in lista_respuestas)
+            {
+                if(r.Valoracion > maxima)
+                {
+                    maxima = r.Valoracion;
+                }
+            }
+
+            return maxima;
         }
 
         public void AnadirRespuesta(int val, string com)
